@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\R-Tavy\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\R-Tavy\\.nuget\\packages"
+    ]
+  }
+}
