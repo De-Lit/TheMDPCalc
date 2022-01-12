@@ -6,9 +6,10 @@ namespace Расчет_ОПП
 {
     public static class WeightAnalysisFunctions
     {
-        public static void Foo<T>(T firstRocketStage)
+        public static void Foo()
         {
-            
+
+
         }
     }
 }

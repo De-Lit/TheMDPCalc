@@ -15,4 +15,3 @@ C:\Users\R-Tavy\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.
 C:\Users\R-Tavy\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.genruntimeconfig.cache
 C:\Users\R-Tavy\Расчет ОПП\bin\Debug\netcoreapp3.1\alglib318gpl_net2.dll
 C:\Users\R-Tavy\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.csproj.CopyComplete
-C:\Users\R-Tavy\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.csproj.AssemblyReference.cache

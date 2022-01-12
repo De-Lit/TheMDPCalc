@@ -23,11 +23,9 @@ namespace Расчет_ОПП
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            //public double nu1 = double.Parse(textBox38.Text);
+            //public double nu2 = double.Parse(textBox39.Text);
             int t = 220;
-            double nu1 = double.Parse(textBox39.Text);
-            double nu2 = double.Parse(textBox40.Text);
-
             double[] inputMainParamsArray = new double[] {
                 double.Parse(textBox31.Text), double.Parse(textBox37.Text), double.Parse(textBox38.Text),
                 double.Parse(textBox39.Text), double.Parse(textBox40.Text), double.Parse(textBox41.Text),
@@ -53,21 +51,8 @@ namespace Расчет_ОПП
             };
             SecondRocketStage secondRocketStage = new SecondRocketStage(secondStageParamsArray);
 
-            label29.Text = Convert.ToString(MainCalculation.DoWeightAnalysis(firstRocketStage, secondRocketStage, t, nu1, nu2)[0, 2]);
+            label29.Text = Convert.ToString(MainCalculation.DoWeightAnalysis(firstRocketStage, secondRocketStage, t, inputMainParams.nu1, inputMainParams.nu2)[0, 2]);
 
-
-            void BalisticAnalisis1()
-            {
-                //BalisticAnalisis1
-                //double g0 = 9.81f;
-                //double Pud1 = firstRocketStage.C0 / g0;
-                //double Pud2 = secondRocketStage.C0 / g0;
-                //double Theta0 = 27f;
-                //double Theta1 = 29f;
-                //const double g_sr = 9.5f;
-                //const double g_sr1 = 9.73f;
-                //const double g_sr2 = 9.4f;
-            }
         }
         private void CheckInput(KeyPressEventArgs e) //Ограничение ввода в textBox формы
         {

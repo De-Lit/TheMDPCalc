@@ -8,7 +8,7 @@ namespace Расчет_ОПП
     public abstract class InputRocketStageParams //Класс с параметрами, общими для обеех ступеней
     {
         public double SpGr = 2.64; //Удельный вес материала оболочки бака (кг/дм^3)
-        
+
         public double Jg; //Плотность горючего
         public double Jo; //Плотность окислителя
         public double K0; //Стехиометрическое соотношение КРТ
@@ -45,12 +45,12 @@ namespace Расчет_ОПП
             alglib.spline1dbuildcubic(temperature, SpStr, out s);
             return alglib.spline1dcalc(s, t);
         }
-        public double nuK() { return this.K0 * this.aa; }
-        public double nuV() { return nuK() * this.Jg / this.Jo; }
-        public double Gamma_og() { return (1 + nuK()) / (1 / this.Jg + nuK() / this.Jo); }
-        public double aSp() { return this.aSpz / Gamma_og(); }
-        public double aTo(double t) { return 3.45f * this.F * (this.PmaxO * sigma(t) * nuV() / (1 + nuV()) + this.PmaxG * sigma(t) * nuV() / (1 + nuV())) * 1e-2 / Gamma_og(); }
-        public double aSum(double t) { return aTo(t) + aSp() + this.aTost; }
+        private double nuK() { return this.K0 * this.aa; }
+        private double nuV() { return nuK() * this.Jg / this.Jo; }
+        private double Gamma_og() { return (1 + nuK()) / (1 / this.Jg + nuK() / this.Jo); }
+        private double aSp() { return this.aSpz / Gamma_og(); }
+        private double aTo(double t) { return 3.45f * this.F * (this.PmaxO * sigma(t) * nuV() / (1 + nuV()) + this.PmaxG * sigma(t) * nuV() / (1 + nuV())) * 1e-2 / Gamma_og(); }
+        private double aSum(double t) { return aTo(t) + aSp() + this.aTost; }
         public double A(double t) { return aSum(t) / (1 + aSum(t) + this.kPr); }
         public abstract double mu_Sum(double G01);
         public abstract double Muk(double lambda, double G01, double nu, double t);

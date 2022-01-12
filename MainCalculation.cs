@@ -6,6 +6,7 @@ namespace Расчет_ОПП
 {
     class MainCalculation
     {
+        
         static public double[,] DoWeightAnalysis(FirstRocketStage firstRocketStage, SecondRocketStage secondRocketStage, int t, double nu1, double nu2)
         {
 
