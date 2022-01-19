@@ -6,13 +6,34 @@ namespace Расчет_ОПП
 {
     public class InputMainParams
     {
-        public double L; //Дальность полета ракеты
-        public double G0; //Масса полезного груза
-        public double SpGr; //Удельный вес материала оболочки бака (кг/дм^3)
-        public double nu1; //Стартовая нагрузка на тягу первй ступени
-        public double nu2; //Стартовая нагрузка на тягу второй ступени
-        public double dm1; //Начало интервала поиска конечной массы
-        public double dm2; //Конец интервала поиска конечной массы
+        /// <summary>
+        /// Дальность полета ракеты
+        /// </summary>
+        public double L { get; set; }
+        /// <summary>
+        /// Масса полезного груза
+        /// </summary>
+        public double G0 { get; set; }
+        /// <summary>
+        /// Удельный вес материала оболочки бака (кг/дм^3)
+        /// </summary>
+        public double SpGr { get; set; }
+        /// <summary>
+        /// Стартовая нагрузка на тягу первй ступени
+        /// </summary>
+        public double nu1 { get; set; }
+        /// <summary>
+        /// Стартовая нагрузка на тягу второй ступени
+        /// </summary>
+        public double nu2 { get; set; }
+        /// <summary>
+        /// Начало интервала поиска конечной массы
+        /// </summary>
+        public double dm1 { get; set; }
+        /// <summary>
+        /// Конец интервала поиска конечной массы
+        /// </summary>
+        public double dm2 { get; set; }
 
         public InputMainParams(double[] Params)
         {

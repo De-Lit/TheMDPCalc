@@ -23,8 +23,6 @@ namespace Расчет_ОПП
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //public double nu1 = double.Parse(textBox38.Text);
-            //public double nu2 = double.Parse(textBox39.Text);
             int t = 220;
             double[] inputMainParamsArray = new double[] {
                 double.Parse(textBox31.Text), double.Parse(textBox37.Text), double.Parse(textBox38.Text),
