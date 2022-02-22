@@ -7,7 +7,7 @@ namespace Расчет_ОПП
     /// <summary>
     /// Класс с параметрами второй ступени
     /// </summary>
-    class SecondRocketStage : iInputRocketStageParams
+    public class SecondRocketStage : iInputRocketStageParams
     {
         /// <summary>
         /// Масса головной части
@@ -38,13 +38,13 @@ namespace Расчет_ОПП
             GammaDU = Params["GammaDU"];
             Ggch = Params["G0"] * 1.55f;
         }
-        public override double mu_Sum(double G01)
+        /*public override double mu_Sum(double G01)
         {
             return this.muHo + this.muPo + this.muOu / G01 + this.muSu / G01;
         }
         public override double Muk(double lambda, double G01, double nu, double t)
         {
             return (Ggch / G01 / lambda + mu_Sum(G01) + GammaDU / nu) * (1 - A(t)) + A(t);
-        }
+        }*/
     }
 }

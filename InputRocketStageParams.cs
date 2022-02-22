@@ -80,7 +80,7 @@ namespace Расчет_ОПП
         /// </summary>
         public double GammaDU { get; set; }
 
-        double sigma(double t)
+        /*double sigma(double t)
         {
             int k = 0;
             double[] SigmaV = new double[] { 35.6901, 32.6309, 19.8845, 13.2563, 9.8563, 7.75 };
@@ -103,6 +103,6 @@ namespace Расчет_ОПП
         private double aSum(double t) { return aTo(t) + aSp() + this.aTost; }
         public double A(double t) { return aSum(t) / (1 + aSum(t) + this.kPr); }
         public abstract double mu_Sum(double G01);
-        public abstract double Muk(double lambda, double G01, double nu, double t);
+        public abstract double Muk(double lambda, double G01, double nu, double t);*/
     }
 }

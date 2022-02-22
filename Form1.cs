@@ -76,8 +76,7 @@ namespace Расчет_ОПП
             };
             SecondRocketStage secondRocketStage = new SecondRocketStage(secondStageParamsDict);
 
-            label29.Text = Convert.ToString(MainCalculation.DoWeightAnalysis(firstRocketStage, secondRocketStage, inputMainParams)[0, 2]);
-
+            label29.Text = Convert.ToString(MainCalculation.DoWeightAnalysis(firstRocketStage, secondRocketStage, inputMainParams)[0, 0]);
         }
         // Ограничение ввода в textBox формы
         private void CheckInput(KeyPressEventArgs e)
