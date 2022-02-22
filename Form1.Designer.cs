@@ -265,7 +265,7 @@ namespace Расчет_ОПП
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(230, 160);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 15);
+            this.label6.Size = new System.Drawing.Size(46, 15);
             this.label6.TabIndex = 16;
             this.label6.Text = "mu(xo)";
             this.toolTip1.SetToolTip(this.label6, "Относительный вес хвостового отсека\r\n(0.002-0.003)");
@@ -374,7 +374,7 @@ namespace Расчет_ОПП
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(379, 72);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(44, 15);
+            this.label12.Size = new System.Drawing.Size(42, 15);
             this.label12.TabIndex = 28;
             this.label12.Text = "a(Tost)";
             this.toolTip1.SetToolTip(this.label12, "Относительный вес остатков топлива\r\n(0.015-0.0165)");
@@ -394,7 +394,7 @@ namespace Расчет_ОПП
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(370, 131);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(53, 15);
+            this.label14.Size = new System.Drawing.Size(54, 15);
             this.label14.TabIndex = 30;
             this.label14.Text = "P(maxO)";
             this.toolTip1.SetToolTip(this.label14, "Давление в баке окислителя\r\n(3-6)");
@@ -404,7 +404,7 @@ namespace Расчет_ОПП
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(371, 160);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(52, 15);
+            this.label15.Size = new System.Drawing.Size(53, 15);
             this.label15.TabIndex = 31;
             this.label15.Text = "P(maxG)";
             this.toolTip1.SetToolTip(this.label15, "Давление в баке горючего\r\n(3-6)");
@@ -526,7 +526,7 @@ namespace Расчет_ОПП
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(664, 160);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(52, 15);
+            this.label24.Size = new System.Drawing.Size(53, 15);
             this.label24.TabIndex = 68;
             this.label24.Text = "P(maxG)";
             this.toolTip1.SetToolTip(this.label24, "Давление в баке горючего\r\n(3-6)");
@@ -536,7 +536,7 @@ namespace Расчет_ОПП
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(663, 131);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(53, 15);
+            this.label25.Size = new System.Drawing.Size(54, 15);
             this.label25.TabIndex = 67;
             this.label25.Text = "P(maxO)";
             this.toolTip1.SetToolTip(this.label25, "Давление в баке окислителя\r\n(3-6)");
@@ -556,7 +556,7 @@ namespace Расчет_ОПП
             this.label27.AutoSize = true;
             this.label27.Location = new System.Drawing.Point(672, 72);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(44, 15);
+            this.label27.Size = new System.Drawing.Size(42, 15);
             this.label27.TabIndex = 65;
             this.label27.Text = "a(Tost)";
             this.toolTip1.SetToolTip(this.label27, "Относительный вес остатков топлива\r\n(0.015-0.0165)");
@@ -655,7 +655,7 @@ namespace Расчет_ОПП
             this.label33.AutoSize = true;
             this.label33.Location = new System.Drawing.Point(523, 160);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(45, 15);
+            this.label33.Size = new System.Drawing.Size(46, 15);
             this.label33.TabIndex = 53;
             this.label33.Text = "mu(xo)";
             this.toolTip1.SetToolTip(this.label33, "Относительный вес хвостового отсека\r\n(0.002-0.003)");
@@ -839,7 +839,7 @@ namespace Расчет_ОПП
             this.label44.Size = new System.Drawing.Size(25, 15);
             this.label44.TabIndex = 86;
             this.label44.Text = "dm";
-            this.toolTip1.SetToolTip(this.label44, "Диапазон\r\nпоиска массы (кг)\r\n");
+            this.toolTip1.SetToolTip(this.label44, "Диапазон\r\nпоиска массы ракеты(кг)\r\n");
             // 
             // label29
             // 

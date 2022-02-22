@@ -15,3 +15,22 @@ C:\Users\R-Tavy\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.
 C:\Users\R-Tavy\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.genruntimeconfig.cache
 C:\Users\R-Tavy\Расчет ОПП\bin\Debug\netcoreapp3.1\alglib318gpl_net2.dll
 C:\Users\R-Tavy\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.csproj.CopyComplete
+C:\Users\R-Tavy\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.csproj.AssemblyReference.cache
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.dll
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.pdb
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\bin\Debug\netcoreapp3.1\Расчет ОПП.exe
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\bin\Debug\netcoreapp3.1\Расчет ОПП.deps.json
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\bin\Debug\netcoreapp3.1\Расчет ОПП.runtimeconfig.json
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\bin\Debug\netcoreapp3.1\Расчет ОПП.runtimeconfig.dev.json
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\bin\Debug\netcoreapp3.1\Расчет ОПП.dll
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\bin\Debug\netcoreapp3.1\Расчет ОПП.pdb
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\bin\Debug\netcoreapp3.1\alglib318gpl_net2.dll
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.csproj.AssemblyReference.cache
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет_ОПП.Form1.resources
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.csproj.GenerateResource.cache
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.AssemblyInfoInputs.cache
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.AssemblyInfo.cs
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.csproj.CoreCompileInputs.cache
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.csproj.CopyComplete
+C:\Users\De-Lit\Documents\Program\Расчет ОПП\obj\Debug\netcoreapp3.1\Расчет ОПП.genruntimeconfig.cache

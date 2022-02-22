@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "cef3n2Uuw+tP2SQWi/oaJuaAGBSG9LLhIQu/gnB+yOP5OSGI4pSrOzGTbfja6wYtRMsT1KjE30PftoX4dZmWJQ==",
+  "dgSpecHash": "e6xguM0KHdGQdvtClsOB1SHE8ntm39hjHwiuyc5N8TmiL5Z0GLHKbB7kILFXbdpHzsbpCfvIWDr3vvwPWJkWiQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\R-Tavy\\Расчет ОПП\\Расчет ОПП.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\De-Lit\\Documents\\Program\\Расчет ОПП\\Расчет ОПП.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\De-Lit\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.22\\microsoft.netcore.app.host.win-x64.3.1.22.nupkg.sha512",
+    "C:\\Users\\De-Lit\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\De-Lit\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\De-Lit\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

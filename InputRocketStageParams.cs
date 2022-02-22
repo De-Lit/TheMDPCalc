@@ -8,7 +8,7 @@ namespace Расчет_ОПП
     /// <summary>
     /// Абстрактный класс с параметрами, общими для обеех ступеней
     /// </summary>
-    public abstract class InputRocketStageParams
+    public abstract class iInputRocketStageParams
     {
         /// <summary>
         /// Удельный вес материала оболочки бака (кг/дм^3)

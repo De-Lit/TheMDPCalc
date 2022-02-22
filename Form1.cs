@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
@@ -23,39 +17,73 @@ namespace Расчет_ОПП
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int t = 220;
-            double[] inputMainParamsArray = new double[] {
-                double.Parse(textBox31.Text), double.Parse(textBox37.Text), double.Parse(textBox38.Text),
-                double.Parse(textBox39.Text), double.Parse(textBox40.Text), double.Parse(textBox41.Text),
-                double.Parse(textBox42.Text)
+            // Инициализация словаря основных параметров
+            Dictionary<string, double> inputMainParamsDict = new Dictionary<string, double> ()
+            {
+                { "L", double.Parse(textBox31.Text)},
+                { "G0", double.Parse(textBox37.Text)},
+                { "SpGr", double.Parse(textBox38.Text)},
+                { "nu1", double.Parse(textBox39.Text)},
+                { "nu2", double.Parse(textBox40.Text)},
+                { "dm1", double.Parse(textBox41.Text)},
+                { "dm2", double.Parse(textBox42.Text)}
             };
-            InputMainParams inputMainParams = new InputMainParams(inputMainParamsArray);
-            double[] firstStageParamsArray = new double[] { 
-                double.Parse(textBox1.Text), double.Parse(textBox2.Text), double.Parse(textBox3.Text),
-                double.Parse(textBox4.Text), double.Parse(textBox5.Text), double.Parse(textBox6.Text),
-                double.Parse(textBox7.Text), double.Parse(textBox8.Text), double.Parse(textBox9.Text),
-                double.Parse(textBox10.Text), double.Parse(textBox11.Text), double.Parse(textBox12.Text),
-                double.Parse(textBox13.Text), double.Parse(textBox14.Text), double.Parse(textBox15.Text),
-                double.Parse(textBox16.Text), double.Parse(textBox17.Text), double.Parse(textBox18.Text)
+            InputMainParams inputMainParams = new InputMainParams(inputMainParamsDict);
+            // Инициализация словаря параметров первой ступени
+            Dictionary<string, double> firstStageParamsDict = new Dictionary<string, double> ()
+            {
+                {"Jg", double.Parse(textBox1.Text) },
+                {"Jo", double.Parse(textBox2.Text) },
+                {"K0", double.Parse(textBox3.Text) },
+                {"aa", double.Parse(textBox4.Text) },
+                {"muHo", double.Parse(textBox5.Text) },
+                {"muPer", double.Parse(textBox6.Text) },
+                {"muOu", double.Parse(textBox7.Text) },
+                {"muSu", double.Parse(textBox8.Text) },
+                {"muSt", double.Parse(textBox9.Text) },
+                {"aSpz", double.Parse(textBox10.Text) },
+                {"aTost", double.Parse(textBox11.Text) },
+                {"kPr", double.Parse(textBox12.Text) },
+                {"PmaxO", double.Parse(textBox13.Text) },
+                {"PmaxG", double.Parse(textBox14.Text) },
+                {"F", double.Parse(textBox15.Text) },
+                {"Cp", double.Parse(textBox16.Text) },
+                {"C0", double.Parse(textBox17.Text) },
+                {"GammaDU", double.Parse(textBox18.Text) }
             };
-            FirstRocketStage firstRocketStage = new FirstRocketStage(firstStageParamsArray);
-            double[] secondStageParamsArray = new double[] {
-                double.Parse(textBox36.Text), double.Parse(textBox35.Text), double.Parse(textBox34.Text),
-                double.Parse(textBox33.Text), double.Parse(textBox32.Text), double.Parse(textBox30.Text),
-                double.Parse(textBox29.Text), double.Parse(textBox28.Text), double.Parse(textBox27.Text),
-                double.Parse(textBox26.Text), double.Parse(textBox25.Text), double.Parse(textBox24.Text),
-                double.Parse(textBox23.Text), double.Parse(textBox22.Text), double.Parse(textBox21.Text),
-                double.Parse(textBox20.Text), double.Parse(textBox19.Text), double.Parse(textBox37.Text)
+            FirstRocketStage firstRocketStage = new FirstRocketStage(firstStageParamsDict);
+            // Инициализация словаря параметров второй ступени
+            Dictionary<string, double> secondStageParamsDict = new Dictionary<string, double> ()
+            {
+                {"Jg", double.Parse(textBox36.Text) },
+                {"Jo", double.Parse(textBox35.Text) },
+                {"K0", double.Parse(textBox34.Text) },
+                {"aa", double.Parse(textBox33.Text) },
+                {"muHo", double.Parse(textBox32.Text) },
+                {"muOu", double.Parse(textBox30.Text) },
+                {"muSu", double.Parse(textBox29.Text) },
+                {"muPo", double.Parse(textBox28.Text) },
+                {"aSpz", double.Parse(textBox27.Text) },
+                {"aTost", double.Parse(textBox26.Text) },
+                {"kPr", double.Parse(textBox25.Text) },
+                {"PmaxO", double.Parse(textBox24.Text) },
+                {"PmaxG", double.Parse(textBox23.Text) },
+                {"F", double.Parse(textBox22.Text) },
+                {"Cp", double.Parse(textBox21.Text) },
+                {"C0", double.Parse(textBox20.Text) },
+                {"GammaDU", double.Parse(textBox19.Text) },
+                {"G0", double.Parse(textBox37.Text) }
             };
-            SecondRocketStage secondRocketStage = new SecondRocketStage(secondStageParamsArray);
+            SecondRocketStage secondRocketStage = new SecondRocketStage(secondStageParamsDict);
 
-            label29.Text = Convert.ToString(MainCalculation.DoWeightAnalysis(firstRocketStage, secondRocketStage, t, inputMainParams.nu1, inputMainParams.nu2)[0, 2]);
+            label29.Text = Convert.ToString(MainCalculation.DoWeightAnalysis(firstRocketStage, secondRocketStage, inputMainParams)[0, 2]);
 
         }
-        private void CheckInput(KeyPressEventArgs e) //Ограничение ввода в textBox формы
+        // Ограничение ввода в textBox формы
+        private void CheckInput(KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if (!Char.IsDigit(number) && number != 8 && number != 44) // цифры, клавиша BackSpace, запятая
+            if (!Char.IsDigit(number) && number != 8 && number != 44) // Цифры, клавиша BackSpace, запятая
             {
                 e.Handled = true;
             }
@@ -103,7 +131,8 @@ namespace Расчет_ОПП
         private void textBox41_KeyPress(object sender, KeyPressEventArgs e) { CheckInput(e); }
         private void textBox42_KeyPress(object sender, KeyPressEventArgs e) { CheckInput(e); }
 
-        private void Form1_Load(object sender, EventArgs e) //Загрузка в textBoxs формы значений из файла xml
+        // Загрузка в textBoxs формы значений из файла xml (при запуске программы)
+        private void Form1_Load(object sender, EventArgs e)
         {
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load("SafedParams.xml");
@@ -153,7 +182,8 @@ namespace Расчет_ОПП
             try { textBox42.Text = xDoc.DocumentElement["dm2"].InnerText; } catch { }
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e) //Сохранение значений из textBoxs формы в файл xml
+        // Сохранение значений из textBoxs формы в файл xml (при завершении программы)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             XDocument doc = new XDocument(new XElement("SafedParams"));
 

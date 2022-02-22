@@ -35,15 +35,15 @@ namespace Расчет_ОПП
         /// </summary>
         public double dm2 { get; set; }
 
-        public InputMainParams(double[] Params)
+        public InputMainParams(Dictionary<string, double> Params)
         {
-            L = Params[0];
-            G0 = Params[1];
-            SpGr = Params[2];
-            nu1 = Params[3];
-            nu2 = Params[4];
-            dm1 = Params[5];
-            dm2 = Params[6];
+            L = Params["L"];
+            G0 = Params["G0"];
+            SpGr = Params["SpGr"];
+            nu1 = Params["nu1"];
+            nu2 = Params["nu2"];
+            dm1 = Params["dm1"];
+            dm2 = Params["dm2"];
         }
     }
 }
