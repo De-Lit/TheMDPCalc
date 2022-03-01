@@ -23,14 +23,14 @@ namespace Расчет_ОПП
                 alglib.spline1dbuildcubic(temperature, SpStr, out s);
                 return alglib.spline1dcalc(s, t);
             }
-            double nuK() { return firstRocketStage.K0 * firstRocketStage.aa; }
-            double nuV() { return nuK() * firstRocketStage.Jg / firstRocketStage.Jo; }
-            double Gamma_og() { return (1 + nuK()) / (1 / firstRocketStage.Jg + nuK() / firstRocketStage.Jo); }
-            double aSp() { return firstRocketStage.aSpz / Gamma_og(); }
-            double aTo(double t) { return 3.45f * firstRocketStage.F * (firstRocketStage.PmaxO * sigma(t) * nuV() / (1 + nuV()) + firstRocketStage.PmaxG * sigma(t) * nuV() / (1 + nuV())) * 1e-2 / Gamma_og(); }
-            double aSum(double t) { return aTo(t) + aSp() + firstRocketStage.aTost; }
-            double A(double t) { return aSum(t) / (1 + aSum(t) + firstRocketStage.kPr); }
-            double mu_Sum(double G01) { return firstRocketStage.muHo + firstRocketStage.muSt + firstRocketStage.muOu / G01 + firstRocketStage.muSu / G01;}
+            double nuK() => firstRocketStage.K0 * firstRocketStage.aa; 
+            double nuV() => nuK() * firstRocketStage.Jg / firstRocketStage.Jo;
+            double Gamma_og() => (1 + nuK()) / (1 / firstRocketStage.Jg + nuK() / firstRocketStage.Jo);
+            double aSp() => firstRocketStage.aSpz / Gamma_og();
+            double aTo(double t) => 3.45f * firstRocketStage.F * (firstRocketStage.PmaxO * sigma(t) * nuV() / (1 + nuV()) + firstRocketStage.PmaxG * sigma(t) * nuV() / (1 + nuV())) * 1e-2 / Gamma_og();
+            double aSum(double t) => aTo(t) + aSp() + firstRocketStage.aTost;
+            double A(double t) => aSum(t) / (1 + aSum(t) + firstRocketStage.kPr);
+            double mu_Sum(double G01) => firstRocketStage.muHo + firstRocketStage.muSt + firstRocketStage.muOu / G01 + firstRocketStage.muSu / G01;
             return ((1 + firstRocketStage.muPer) * lambda + mu_Sum(G01) + firstRocketStage.GammaDU / inputMainParams.nu1) * (1 - A(t)) + A(t);
         }
         public static double Muk(double lambda, double G01, InputMainParams inputMainParams, SecondRocketStage secondRocketStage, double t)
@@ -50,14 +50,14 @@ namespace Расчет_ОПП
                 alglib.spline1dbuildcubic(temperature, SpStr, out s);
                 return alglib.spline1dcalc(s, t);
             }
-            double nuK() { return secondRocketStage.K0 * secondRocketStage.aa; }
-            double nuV() { return nuK() * secondRocketStage.Jg / secondRocketStage.Jo; }
-            double Gamma_og() { return (1 + nuK()) / (1 / secondRocketStage.Jg + nuK() / secondRocketStage.Jo); }
-            double aSp() { return secondRocketStage.aSpz / Gamma_og(); }
-            double aTo(double t) { return 3.45f * secondRocketStage.F * (secondRocketStage.PmaxO * sigma(t) * nuV() / (1 + nuV()) + secondRocketStage.PmaxG * sigma(t) * nuV() / (1 + nuV())) * 1e-2 / Gamma_og(); }
-            double aSum(double t) { return aTo(t) + aSp() + secondRocketStage.aTost; }
-            double A(double t) { return aSum(t) / (1 + aSum(t) + secondRocketStage.kPr); }
-            double mu_Sum(double G01) { return secondRocketStage.muHo + secondRocketStage.muPo + secondRocketStage.muOu / G01 + secondRocketStage.muSu / G01; }
+            double nuK() => secondRocketStage.K0 * secondRocketStage.aa;
+            double nuV() => nuK() * secondRocketStage.Jg / secondRocketStage.Jo;
+            double Gamma_og() => (1 + nuK()) / (1 / secondRocketStage.Jg + nuK() / secondRocketStage.Jo);
+            double aSp() => secondRocketStage.aSpz / Gamma_og();
+            double aTo(double t) => 3.45f * secondRocketStage.F * (secondRocketStage.PmaxO * sigma(t) * nuV() / (1 + nuV()) + secondRocketStage.PmaxG * sigma(t) * nuV() / (1 + nuV())) * 1e-2 / Gamma_og();
+            double aSum(double t) => aTo(t) + aSp() + secondRocketStage.aTost;
+            double A(double t) => aSum(t) / (1 + aSum(t) + secondRocketStage.kPr);
+            double mu_Sum(double G01) => secondRocketStage.muHo + secondRocketStage.muPo + secondRocketStage.muOu / G01 + secondRocketStage.muSu / G01;
             return (secondRocketStage.Ggch / G01 / lambda + mu_Sum(G01) + secondRocketStage.GammaDU / inputMainParams.nu2) * (1 - A(t)) + A(t);
         }
     }
