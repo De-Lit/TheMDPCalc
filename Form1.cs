@@ -23,8 +23,8 @@ namespace Расчет_ОПП
                 { "L", double.Parse(textBox31.Text)},
                 { "G0", double.Parse(textBox37.Text)},
                 { "SpGr", double.Parse(textBox38.Text)},
-                { "nu1", double.Parse(textBox39.Text)},
-                { "nu2", double.Parse(textBox40.Text)},
+                //{ "nu1", double.Parse(textBox39.Text)},
+                //{ "nu2", double.Parse(textBox40.Text)},
                 { "dm1", double.Parse(textBox41.Text)},
                 { "dm2", double.Parse(textBox42.Text)}
             };
@@ -49,7 +49,8 @@ namespace Расчет_ОПП
                 {"F", double.Parse(textBox15.Text) },
                 {"Cp", double.Parse(textBox16.Text) },
                 {"C0", double.Parse(textBox17.Text) },
-                {"GammaDU", double.Parse(textBox18.Text) }
+                {"GammaDU", double.Parse(textBox18.Text) },
+                { "nu1", double.Parse(textBox39.Text)}
             };
             FirstRocketStage firstRocketStage = new FirstRocketStage(firstStageParamsDict);
             // Инициализация словаря параметров второй ступени
@@ -72,11 +73,15 @@ namespace Расчет_ОПП
                 {"Cp", double.Parse(textBox21.Text) },
                 {"C0", double.Parse(textBox20.Text) },
                 {"GammaDU", double.Parse(textBox19.Text) },
-                {"G0", double.Parse(textBox37.Text) }
+                {"G0", double.Parse(textBox37.Text) },
+                { "nu2", double.Parse(textBox39.Text)}
             };
             SecondRocketStage secondRocketStage = new SecondRocketStage(secondStageParamsDict);
 
-            label29.Text = Convert.ToString(MainCalculation.DoWeightAnalysis(firstRocketStage, secondRocketStage, inputMainParams)[0, 0]);
+            double[,] array1 = new double[5, 3];
+            double[,] array2 = new double[5, 3];
+            MainCalculation.DoWeightAnalysis(firstRocketStage, secondRocketStage, inputMainParams, array1, array2);
+            label29.Text = Convert.ToString(array1[3, 2]);
         }
         // Ограничение ввода в textBox формы
         private void CheckInput(KeyPressEventArgs e)

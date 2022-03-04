@@ -21,11 +21,11 @@ namespace Расчет_ОПП
         /// <summary>
         /// Стартовая нагрузка на тягу первй ступени
         /// </summary>
-        public double nu1 { get; set; }
+        //public double nu1 { get; set; }
         /// <summary>
         /// Стартовая нагрузка на тягу второй ступени
         /// </summary>
-        public double nu2 { get; set; }
+        //public double nu2 { get; set; }
         /// <summary>
         /// Начало интервала поиска конечной массы
         /// </summary>
@@ -40,8 +40,8 @@ namespace Расчет_ОПП
             L = Params["L"];
             G0 = Params["G0"];
             SpGr = Params["SpGr"];
-            nu1 = Params["nu1"];
-            nu2 = Params["nu2"];
+            //nu1 = Params["nu1"];
+            //nu2 = Params["nu2"];
             dm1 = Params["dm1"];
             dm2 = Params["dm2"];
         }

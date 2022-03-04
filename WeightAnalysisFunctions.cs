@@ -6,7 +6,7 @@ namespace Расчет_ОПП
 {
     public static class WeightAnalysisFunctions
     {
-        public static double Muk(double lambda, double G01, InputMainParams inputMainParams, FirstRocketStage firstRocketStage, double t)
+        public static double Muk(double lambda, double G01, FirstRocketStage firstRocketStage, double t)
         {
             double sigma(double t)
             {
@@ -31,9 +31,9 @@ namespace Расчет_ОПП
             double aSum(double t) => aTo(t) + aSp() + firstRocketStage.aTost;
             double A(double t) => aSum(t) / (1 + aSum(t) + firstRocketStage.kPr);
             double mu_Sum(double G01) => firstRocketStage.muHo + firstRocketStage.muSt + firstRocketStage.muOu / G01 + firstRocketStage.muSu / G01;
-            return ((1 + firstRocketStage.muPer) * lambda + mu_Sum(G01) + firstRocketStage.GammaDU / inputMainParams.nu1) * (1 - A(t)) + A(t);
+            return ((1 + firstRocketStage.muPer) * lambda + mu_Sum(G01) + firstRocketStage.GammaDU / firstRocketStage.nu) * (1 - A(t)) + A(t);
         }
-        public static double Muk(double lambda, double G01, InputMainParams inputMainParams, SecondRocketStage secondRocketStage, double t)
+        public static double Muk(double lambda, double G01, SecondRocketStage secondRocketStage, double t)
         {
             double sigma(double t)
             {
@@ -58,7 +58,7 @@ namespace Расчет_ОПП
             double aSum(double t) => aTo(t) + aSp() + secondRocketStage.aTost;
             double A(double t) => aSum(t) / (1 + aSum(t) + secondRocketStage.kPr);
             double mu_Sum(double G01) => secondRocketStage.muHo + secondRocketStage.muPo + secondRocketStage.muOu / G01 + secondRocketStage.muSu / G01;
-            return (secondRocketStage.Ggch / G01 / lambda + mu_Sum(G01) + secondRocketStage.GammaDU / inputMainParams.nu2) * (1 - A(t)) + A(t);
+            return (secondRocketStage.Ggch / G01 / lambda + mu_Sum(G01) + secondRocketStage.GammaDU / secondRocketStage.nu) * (1 - A(t)) + A(t);
         }
     }
 }

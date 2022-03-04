@@ -37,14 +37,7 @@ namespace Расчет_ОПП
             Cp = Params["Cp"];
             C0 = Params["C0"];
             GammaDU = Params["GammaDU"];
+            nu = Params["nu1"];
         }
-        /*public override double mu_Sum(double G01)
-        {
-            return this.muHo + this.muSt + this.muOu / G01 + this.muSu / G01;
-        }
-        public override double Muk(double lambda, double G01, double nu, double t)
-        {
-            return ((1 + muPer) * lambda + mu_Sum(G01) + GammaDU / nu) * (1 - A(t)) + A(t);
-        }*/
     }
 }

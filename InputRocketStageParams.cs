@@ -80,29 +80,9 @@ namespace Расчет_ОПП
         /// </summary>
         public double GammaDU { get; set; }
 
-        /*double sigma(double t)
-        {
-            int k = 0;
-            double[] SigmaV = new double[] { 35.6901, 32.6309, 19.8845, 13.2563, 9.8563, 7.75 };
-            double[] temperature = new double[] { 20, 100, 200, 300, 400, 500 };
-            double[] SpStr = new double[6];
-            foreach (double el in SigmaV)
-            {
-                SpStr[k] = this.SpGr / el;
-                k += 1;
-            }
-            alglib.spline1dinterpolant s;
-            alglib.spline1dbuildcubic(temperature, SpStr, out s);
-            return alglib.spline1dcalc(s, t);
-        }
-        private double nuK() { return this.K0 * this.aa; }
-        private double nuV() { return nuK() * this.Jg / this.Jo; }
-        private double Gamma_og() { return (1 + nuK()) / (1 / this.Jg + nuK() / this.Jo); }
-        private double aSp() { return this.aSpz / Gamma_og(); }
-        private double aTo(double t) { return 3.45f * this.F * (this.PmaxO * sigma(t) * nuV() / (1 + nuV()) + this.PmaxG * sigma(t) * nuV() / (1 + nuV())) * 1e-2 / Gamma_og(); }
-        private double aSum(double t) { return aTo(t) + aSp() + this.aTost; }
-        public double A(double t) { return aSum(t) / (1 + aSum(t) + this.kPr); }
-        public abstract double mu_Sum(double G01);
-        public abstract double Muk(double lambda, double G01, double nu, double t);*/
+        /// <summary>
+        /// Стартовая нагрузка на тягу первй ступени
+        /// </summary>
+        public double nu { get; set; }
     }
 }
