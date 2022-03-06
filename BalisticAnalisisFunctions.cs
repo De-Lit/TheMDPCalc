@@ -16,25 +16,23 @@ namespace Расчет_ОПП
         private static double Pud(iInputRocketStageParams rocketStage) => rocketStage.C0 / g_0;
         private static double T(iInputRocketStageParams rocketStage) => rocketStage.nu * Pud(rocketStage);
         private static double tau_1(FirstRocketStage firstRocketStage, SecondRocketStage secondRocketStage, double MuK_1, double MuK_2)
-            => T((iInputRocketStageParams)firstRocketStage) * (1 - MuK_1) / (T((iInputRocketStageParams)firstRocketStage) * (1 - MuK_1) + T((iInputRocketStageParams)secondRocketStage) * (1 - MuK_2));
+            => T(firstRocketStage) * (1 - MuK_1) / (T(firstRocketStage) * (1 - MuK_1) + T(secondRocketStage) * (1 - MuK_2));
         private static double tau_2(FirstRocketStage firstRocketStage, SecondRocketStage secondRocketStage, double MuK_1, double MuK_2)
             => 1 - tau_1(firstRocketStage, secondRocketStage, MuK_1, MuK_2);
         private static double Vk(FirstRocketStage firstRocketStage, SecondRocketStage secondRocketStage, double MuK_1, double MuK_2, double Theta)
-            => -firstRocketStage.Cp * Math.Log(MuK_1) - secondRocketStage.Cp * Math.Log(MuK_2) - g_sr * Functions.f(Theta) * (T((iInputRocketStageParams)firstRocketStage) * (1 - MuK_1) + T((iInputRocketStageParams)secondRocketStage) * (1 - MuK_2)) - Functions.dV23(firstRocketStage.nu);
+            => -firstRocketStage.Cp * Math.Log(MuK_1) - secondRocketStage.Cp * Math.Log(MuK_2) - g_sr * Functions.f(Theta) * (T(firstRocketStage) * (1 - MuK_1) + T(secondRocketStage) * (1 - MuK_2)) - Functions.dV23(firstRocketStage.nu);
         private static double Va(FirstRocketStage firstRocketStage, SecondRocketStage secondRocketStage, double MuK_1, double MuK_2, double Theta)
-            => -firstRocketStage.Cp * Math.Log(MuK_1) - g_sr1 * Functions.f1(tau_1(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta) * T((iInputRocketStageParams)firstRocketStage) * (1 - MuK_1) - Functions.dV23(firstRocketStage.nu);
+            => -firstRocketStage.Cp * Math.Log(MuK_1) - g_sr1 * Functions.f1(tau_1(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta) * T(firstRocketStage) * (1 - MuK_1) - Functions.dV23(firstRocketStage.nu);
         private static double Xk_1(FirstRocketStage firstRocketStage, SecondRocketStage secondRocketStage, double MuK_1, double MuK_2, double Theta)
-            => T((iInputRocketStageParams)firstRocketStage) * (1 - MuK_1) * (firstRocketStage.Cp * Functions.Ax1(MuK_1, Theta) * Functions.Kx1(tau_1(firstRocketStage, secondRocketStage, MuK_1, MuK_2)) - g_sr1 * T((iInputRocketStageParams)firstRocketStage) * (1 - MuK_1) * Functions.Bx1(tau_1(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta));
-
+            => T(firstRocketStage) * (1 - MuK_1) * (firstRocketStage.Cp * Functions.Ax1(MuK_1, Theta) * Functions.Kx1(tau_1(firstRocketStage, secondRocketStage, MuK_1, MuK_2)) - g_sr1 * T(firstRocketStage) * (1 - MuK_1) * Functions.Bx1(tau_1(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta));
         private static double Xk_2(FirstRocketStage firstRocketStage, SecondRocketStage secondRocketStage, double MuK_1, double MuK_2, double Theta)
-            => T((iInputRocketStageParams)secondRocketStage) * (1 - MuK_2) * (secondRocketStage.Cp * Functions.Ax2(MuK_2, Theta) + Va(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) * Functions.fx2(tau_2(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta) - g_sr2 * T((iInputRocketStageParams)secondRocketStage) * (1 - MuK_2) * Functions.Bx2(tau_2(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta));
-
+            => T(secondRocketStage) * (1 - MuK_2) * (secondRocketStage.Cp * Functions.Ax2(MuK_2, Theta) + Va(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) * Functions.fx2(tau_2(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta) - g_sr2 * T(secondRocketStage) * (1 - MuK_2) * Functions.Bx2(tau_2(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta));
         private static double Xk(FirstRocketStage firstRocketStage, SecondRocketStage secondRocketStage, double MuK_1, double MuK_2, double Theta)
             => Xk_1(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) + Xk_2(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta);
         private static double Yk_1(FirstRocketStage firstRocketStage, SecondRocketStage secondRocketStage, double MuK_1, double MuK_2, double Theta)
-            => T((iInputRocketStageParams)firstRocketStage) * (1 - MuK_1) * (firstRocketStage.Cp * Functions.Ay1(MuK_1, Theta) * Functions.Ky1(tau_1(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta) - g_sr1 * T((iInputRocketStageParams)firstRocketStage) * (1 - MuK_1) * Functions.By1(tau_1(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta));
+            => T(firstRocketStage) * (1 - MuK_1) * (firstRocketStage.Cp * Functions.Ay1(MuK_1, Theta) * Functions.Ky1(tau_1(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta) - g_sr1 * T(firstRocketStage) * (1 - MuK_1) * Functions.By1(tau_1(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta));
         private static double Yk_2(FirstRocketStage firstRocketStage, SecondRocketStage secondRocketStage, double MuK_1, double MuK_2, double Theta)
-            => T((iInputRocketStageParams)secondRocketStage) * (1 - MuK_2) * (secondRocketStage.Cp * Functions.Ay2(MuK_2, Theta) + Va(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) * Functions.fy2(tau_2(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta) - g_sr2 * T((iInputRocketStageParams)secondRocketStage) * (1 - MuK_2) * Functions.By2(tau_2(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta));
+            => T(secondRocketStage) * (1 - MuK_2) * (secondRocketStage.Cp * Functions.Ay2(MuK_2, Theta) + Va(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) * Functions.fy2(tau_2(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta) - g_sr2 * T(secondRocketStage) * (1 - MuK_2) * Functions.By2(tau_2(firstRocketStage, secondRocketStage, MuK_1, MuK_2), Theta));
         private static double Yk(FirstRocketStage firstRocketStage, SecondRocketStage secondRocketStage, double MuK_1, double MuK_2, double Theta)
             => Yk_1(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) + Yk_2(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta);
         private static double Xab(FirstRocketStage firstRocketStage, SecondRocketStage secondRocketStage, double MuK_1, double MuK_2, double Theta)
