@@ -6,6 +6,7 @@ namespace Расчет_ОПП
 {
     public class InputMainParams
     {
+        public InputMainParams() { }
         /// <summary>
         /// Дальность полета ракеты
         /// </summary>
@@ -35,7 +36,7 @@ namespace Расчет_ОПП
         /// </summary>
         public double dm2 { get; set; }
 
-        public InputMainParams(Dictionary<string, double> Params)
+        public void SetParams(Dictionary<string, double> Params)
         {
             L = Params["L"];
             G0 = Params["G0"];

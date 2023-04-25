@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
-using Functions;
+//using Functions;
 
 
 namespace Расчет_ОПП
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public Form1(Controller controller)
         {
             InitializeComponent();
+            this.controller_ = controller;
         }
-
+        private Controller controller_;
         private void button1_Click(object sender, EventArgs e)
         {
             // Инициализация словаря основных параметров
-            Dictionary<string, double> inputMainParamsDict = new Dictionary<string, double> ()
+            Dictionary<string, double> inputMainParamsDict = new Dictionary<string, double>()
             {
                 { "L", double.Parse(textBox31.Text)},
                 { "G0", double.Parse(textBox37.Text)},
@@ -28,9 +29,8 @@ namespace Расчет_ОПП
                 { "dm1", double.Parse(textBox41.Text)},
                 { "dm2", double.Parse(textBox42.Text)}
             };
-            InputMainParams inputMainParams = new InputMainParams(inputMainParamsDict);
             // Инициализация словаря параметров первой ступени
-            Dictionary<string, double> firstStageParamsDict = new Dictionary<string, double> ()
+            Dictionary<string, double> firstStageParamsDict = new Dictionary<string, double>()
             {
                 {"Jg", double.Parse(textBox1.Text) },
                 {"Jo", double.Parse(textBox2.Text) },
@@ -52,9 +52,8 @@ namespace Расчет_ОПП
                 {"GammaDU", double.Parse(textBox18.Text) },
                 { "nu1", double.Parse(textBox39.Text)}
             };
-            FirstRocketStage firstRocketStage = new FirstRocketStage(firstStageParamsDict);
             // Инициализация словаря параметров второй ступени
-            Dictionary<string, double> secondStageParamsDict = new Dictionary<string, double> ()
+            Dictionary<string, double> secondStageParamsDict = new Dictionary<string, double>()
             {
                 {"Jg", double.Parse(textBox36.Text) },
                 {"Jo", double.Parse(textBox35.Text) },
@@ -76,12 +75,7 @@ namespace Расчет_ОПП
                 {"G0", double.Parse(textBox37.Text) },
                 { "nu2", double.Parse(textBox39.Text)}
             };
-            SecondRocketStage secondRocketStage = new SecondRocketStage(secondStageParamsDict);
-
-            double[,] array1 = new double[5, 3];
-            double[,] array2 = new double[5, 3];
-            MainCalculation.DoWeightAnalysis(firstRocketStage, secondRocketStage, inputMainParams, array1, array2);
-            label29.Text = Convert.ToString(array1[3, 2]);
+            label29.Text = controller_.Calculate(inputMainParamsDict, firstStageParamsDict, secondStageParamsDict);
         }
         // Ограничение ввода в textBox формы
         private void CheckInput(KeyPressEventArgs e)
@@ -138,52 +132,56 @@ namespace Расчет_ОПП
         // Загрузка в textBoxs формы значений из файла xml (при запуске программы)
         private void Form1_Load(object sender, EventArgs e)
         {
-            XmlDocument xDoc = new XmlDocument();
-            xDoc.Load("SafedParams.xml");
-            try { textBox1.Text = xDoc.DocumentElement["Jg1"].InnerText; } catch { }
-            try { textBox2.Text = xDoc.DocumentElement["Jo1"].InnerText; } catch { }
-            try { textBox3.Text = xDoc.DocumentElement["K01"].InnerText; } catch { }
-            try { textBox4.Text = xDoc.DocumentElement["aa1"].InnerText; } catch { }
-            try { textBox5.Text = xDoc.DocumentElement["mu_xo1"].InnerText; } catch { }
-            try { textBox6.Text = xDoc.DocumentElement["mu_per1"].InnerText; } catch { }
-            try { textBox7.Text = xDoc.DocumentElement["mu_ou1"].InnerText; } catch { }
-            try { textBox8.Text = xDoc.DocumentElement["mu_su1"].InnerText; } catch { }
-            try { textBox9.Text = xDoc.DocumentElement["mu_st"].InnerText; } catch { }
-            try { textBox10.Text = xDoc.DocumentElement["a_spz1"].InnerText; } catch { }
-            try { textBox11.Text = xDoc.DocumentElement["a_Tost1"].InnerText; } catch { }
-            try { textBox12.Text = xDoc.DocumentElement["k_pr1"].InnerText; } catch { }
-            try { textBox13.Text = xDoc.DocumentElement["P_maxO1"].InnerText; } catch { }
-            try { textBox14.Text = xDoc.DocumentElement["P_maxG1"].InnerText; } catch { }
-            try { textBox15.Text = xDoc.DocumentElement["F1"].InnerText; } catch { }
-            try { textBox16.Text = xDoc.DocumentElement["Cp1"].InnerText; } catch { }
-            try { textBox17.Text = xDoc.DocumentElement["C01"].InnerText; } catch { }
-            try { textBox18.Text = xDoc.DocumentElement["Gamma_du1"].InnerText; } catch { }
-            
-            try { textBox36.Text = xDoc.DocumentElement["Jg2"].InnerText; } catch { }
-            try { textBox35.Text = xDoc.DocumentElement["Jo2"].InnerText; } catch { }
-            try { textBox34.Text = xDoc.DocumentElement["K02"].InnerText; } catch { }
-            try { textBox33.Text = xDoc.DocumentElement["aa2"].InnerText; } catch { }
-            try { textBox32.Text = xDoc.DocumentElement["mu_xo2"].InnerText; } catch { }
-            try { textBox30.Text = xDoc.DocumentElement["mu_ou2"].InnerText; } catch { }
-            try { textBox29.Text = xDoc.DocumentElement["mu_su2"].InnerText; } catch { }
-            try { textBox28.Text = xDoc.DocumentElement["mu_po"].InnerText; } catch { }
-            try { textBox27.Text = xDoc.DocumentElement["a_spz2"].InnerText; } catch { }
-            try { textBox26.Text = xDoc.DocumentElement["a_Tost2"].InnerText; } catch { }
-            try { textBox25.Text = xDoc.DocumentElement["k_pr2"].InnerText; } catch { }
-            try { textBox24.Text = xDoc.DocumentElement["P_maxO2"].InnerText; } catch { }
-            try { textBox23.Text = xDoc.DocumentElement["P_maxG2"].InnerText; } catch { }
-            try { textBox22.Text = xDoc.DocumentElement["F2"].InnerText; } catch { }
-            try { textBox21.Text = xDoc.DocumentElement["Cp2"].InnerText; } catch { }
-            try { textBox20.Text = xDoc.DocumentElement["C02"].InnerText; } catch { }
-            try { textBox19.Text = xDoc.DocumentElement["Gamma_du2"].InnerText; } catch { }
+            try
+            {
+                XmlDocument xDoc = new XmlDocument();
+                xDoc.Load("SafedParams.xml");
+                try { textBox1.Text = xDoc.DocumentElement["Jg1"].InnerText; } catch { }
+                try { textBox2.Text = xDoc.DocumentElement["Jo1"].InnerText; } catch { }
+                try { textBox3.Text = xDoc.DocumentElement["K01"].InnerText; } catch { }
+                try { textBox4.Text = xDoc.DocumentElement["aa1"].InnerText; } catch { }
+                try { textBox5.Text = xDoc.DocumentElement["mu_xo1"].InnerText; } catch { }
+                try { textBox6.Text = xDoc.DocumentElement["mu_per1"].InnerText; } catch { }
+                try { textBox7.Text = xDoc.DocumentElement["mu_ou1"].InnerText; } catch { }
+                try { textBox8.Text = xDoc.DocumentElement["mu_su1"].InnerText; } catch { }
+                try { textBox9.Text = xDoc.DocumentElement["mu_st"].InnerText; } catch { }
+                try { textBox10.Text = xDoc.DocumentElement["a_spz1"].InnerText; } catch { }
+                try { textBox11.Text = xDoc.DocumentElement["a_Tost1"].InnerText; } catch { }
+                try { textBox12.Text = xDoc.DocumentElement["k_pr1"].InnerText; } catch { }
+                try { textBox13.Text = xDoc.DocumentElement["P_maxO1"].InnerText; } catch { }
+                try { textBox14.Text = xDoc.DocumentElement["P_maxG1"].InnerText; } catch { }
+                try { textBox15.Text = xDoc.DocumentElement["F1"].InnerText; } catch { }
+                try { textBox16.Text = xDoc.DocumentElement["Cp1"].InnerText; } catch { }
+                try { textBox17.Text = xDoc.DocumentElement["C01"].InnerText; } catch { }
+                try { textBox18.Text = xDoc.DocumentElement["Gamma_du1"].InnerText; } catch { }
 
-            try { textBox39.Text = xDoc.DocumentElement["nu1"].InnerText; } catch { }
-            try { textBox40.Text = xDoc.DocumentElement["nu2"].InnerText; } catch { }
-            try { textBox37.Text = xDoc.DocumentElement["Ggch"].InnerText; } catch { }
-            try { textBox31.Text = xDoc.DocumentElement["L"].InnerText; } catch { }
-            try { textBox38.Text = xDoc.DocumentElement["SpGr"].InnerText; } catch { }
-            try { textBox41.Text = xDoc.DocumentElement["dm1"].InnerText; } catch { }
-            try { textBox42.Text = xDoc.DocumentElement["dm2"].InnerText; } catch { }
+                try { textBox36.Text = xDoc.DocumentElement["Jg2"].InnerText; } catch { }
+                try { textBox35.Text = xDoc.DocumentElement["Jo2"].InnerText; } catch { }
+                try { textBox34.Text = xDoc.DocumentElement["K02"].InnerText; } catch { }
+                try { textBox33.Text = xDoc.DocumentElement["aa2"].InnerText; } catch { }
+                try { textBox32.Text = xDoc.DocumentElement["mu_xo2"].InnerText; } catch { }
+                try { textBox30.Text = xDoc.DocumentElement["mu_ou2"].InnerText; } catch { }
+                try { textBox29.Text = xDoc.DocumentElement["mu_su2"].InnerText; } catch { }
+                try { textBox28.Text = xDoc.DocumentElement["mu_po"].InnerText; } catch { }
+                try { textBox27.Text = xDoc.DocumentElement["a_spz2"].InnerText; } catch { }
+                try { textBox26.Text = xDoc.DocumentElement["a_Tost2"].InnerText; } catch { }
+                try { textBox25.Text = xDoc.DocumentElement["k_pr2"].InnerText; } catch { }
+                try { textBox24.Text = xDoc.DocumentElement["P_maxO2"].InnerText; } catch { }
+                try { textBox23.Text = xDoc.DocumentElement["P_maxG2"].InnerText; } catch { }
+                try { textBox22.Text = xDoc.DocumentElement["F2"].InnerText; } catch { }
+                try { textBox21.Text = xDoc.DocumentElement["Cp2"].InnerText; } catch { }
+                try { textBox20.Text = xDoc.DocumentElement["C02"].InnerText; } catch { }
+                try { textBox19.Text = xDoc.DocumentElement["Gamma_du2"].InnerText; } catch { }
+
+                try { textBox39.Text = xDoc.DocumentElement["nu1"].InnerText; } catch { }
+                try { textBox40.Text = xDoc.DocumentElement["nu2"].InnerText; } catch { }
+                try { textBox37.Text = xDoc.DocumentElement["Ggch"].InnerText; } catch { }
+                try { textBox31.Text = xDoc.DocumentElement["L"].InnerText; } catch { }
+                try { textBox38.Text = xDoc.DocumentElement["SpGr"].InnerText; } catch { }
+                try { textBox41.Text = xDoc.DocumentElement["dm1"].InnerText; } catch { }
+                try { textBox42.Text = xDoc.DocumentElement["dm2"].InnerText; } catch { }
+            }
+            catch { }
         }
 
         // Сохранение значений из textBoxs формы в файл xml (при завершении программы)
@@ -210,7 +208,7 @@ namespace Расчет_ОПП
                 new XElement("Cp1", textBox16.Text),
                 new XElement("C01", textBox17.Text),
                 new XElement("Gamma_du1", textBox18.Text),
-                
+
                 new XElement("Jg2", textBox36.Text),
                 new XElement("Jo2", textBox35.Text),
                 new XElement("K02", textBox34.Text),
@@ -239,7 +237,11 @@ namespace Расчет_ОПП
                 );
 
             doc.Save("SafedParams.xml");
-        } 
+        }
 
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
     }
 }

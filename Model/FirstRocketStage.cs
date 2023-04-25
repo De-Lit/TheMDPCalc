@@ -5,39 +5,40 @@ using System.Text;
 namespace Расчет_ОПП
 {
     /// <summary>
-    /// Класс с параметрами второй ступени
+    /// Класс с параметрами первой ступени
     /// </summary>
-    public class SecondRocketStage : iInputRocketStageParams
+    public class FirstRocketStage : iInputRocketStageParams
     {
+        public FirstRocketStage() { }
         /// <summary>
-        /// Масса головной части
+        /// Относительный вес стабилизаторов
         /// </summary>
-        public double Ggch { get; set; }
+        public double muSt { get; set; }
         /// <summary>
-        /// Относительный вес приборного отсека
+        /// Относительный вес переходного отсека
         /// </summary>
-        public double muPo { get; set; }
-        public SecondRocketStage(Dictionary<string, double> Params)
+        public double muPer { get; set; }
+        public void SetParams(Dictionary<string, double> Params)
         {
             Jg = Params["Jg"];
             Jo = Params["Jo"];
             K0 = Params["K0"];
             aa = Params["aa"];
             muHo = Params["muHo"];
+            muPer = Params["muPer"];
             muOu = Params["muOu"];
             muSu = Params["muSu"];
-            muPo = Params["muPo"];
+            muSt = Params["muSt"];
             aSpz = Params["aSpz"];
             aTost = Params["aTost"];
             kPr = Params["kPr"];
             PmaxO = Params["PmaxO"];
-            PmaxG = Params["PmaxG"];
+            PmaxG = Params["PmaxO"];
             F = Params["F"];
             Cp = Params["Cp"];
             C0 = Params["C0"];
             GammaDU = Params["GammaDU"];
-            Ggch = Params["G0"] * 1.55f;
-            nu = Params["nu2"];
+            nu = Params["nu1"];
         }
     }
 }

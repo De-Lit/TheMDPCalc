@@ -8,6 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Conroller\**" />
+    <Compile Remove="Controller - Copy\**" />
+    <EmbeddedResource Remove="Conroller\**" />
+    <EmbeddedResource Remove="Controller - Copy\**" />
+    <None Remove="Conroller\**" />
+    <None Remove="Controller - Copy\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="alglib318gpl_net2">
       <HintPath>..\Downloads\alglib-csharp\lib-csharp-core\alglib318gpl_net2.dll</HintPath>
     </Reference>

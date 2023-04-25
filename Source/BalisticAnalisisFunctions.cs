@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using RocketFunctions;
 
-
 namespace Расчет_ОПП
 {
     public static class BalisticAnalisisFunctions
@@ -44,6 +43,6 @@ namespace Расчет_ОПП
         public static double Y(FirstRocketStage firstRocketStage, SecondRocketStage secondRocketStage, double MuK_1, double MuK_2, double Theta)
             => Yk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) + (Yk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) + Rz) * Math.Pow(Math.Sin(Theta / 57.296), 2) / (Math.Sqrt(1 - (2 - Math.Pow(Vk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta), 2) / g_0 / (Yk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) + Rz)) * Math.Pow(Vk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta), 2) / g_0 / (Yk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) + Rz) * Math.Pow(Math.Cos(Theta / 57.296), 2)) + 1 - Math.Pow(Vk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta), 2) / g_0 / (Yk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) + Rz));
         public static double Theta(FirstRocketStage firstRocketStage, SecondRocketStage secondRocketStage, double MuK_1, double MuK_2, double Theta)
-            => 57.296 * Math.Atan(Math.Sqrt(((Math.Pow(Vk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta), 2) * (1 + Yk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) / Rz) / g_0 / Rz) / 2) * (2 - (2 + Yk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) / Rz) * (Math.Pow(Vk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta), 2) * (1 + Yk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) / Rz) / g_0 / Rz)) / ((Math.Pow(Vk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta), 2) * (1 + Yk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) / Rz) / g_0 / Rz) + 2 * Yk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) / Rz)));
+            => 57.296 * Math.Atan(Math.Sqrt(Math.Pow(Vk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta), 2) * (1 + Yk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) / Rz) / g_0 / Rz / 2 * (2 - (2 + Yk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) / Rz) * (Math.Pow(Vk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta), 2) * (1 + Yk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) / Rz) / g_0 / Rz)) / (Math.Pow(Vk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta), 2) * (1 + Yk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) / Rz) / g_0 / Rz + 2 * Yk(firstRocketStage, secondRocketStage, MuK_1, MuK_2, Theta) / Rz)));
     }
 }

@@ -17,7 +17,9 @@ namespace Расчет_ОПП
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Rocket R = new Rocket();
+            Controller C = new Controller(R);
+            Application.Run(new Form1(C));
         }
     }
 }
