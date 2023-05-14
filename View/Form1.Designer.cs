@@ -153,6 +153,8 @@ namespace Расчет_ОПП
             textBox1.Name = "textBox1";
             textBox1.Size = new System.Drawing.Size(50, 23);
             textBox1.TabIndex = 2;
+            textBox1.Text = "0";
+            textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox1.KeyPress += textBox1_KeyPress;
             // 
             // label2
@@ -190,6 +192,8 @@ namespace Расчет_ОПП
             textBox2.Name = "textBox2";
             textBox2.Size = new System.Drawing.Size(50, 23);
             textBox2.TabIndex = 6;
+            textBox2.Text = "0";
+            textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox2.KeyPress += textBox2_KeyPress;
             // 
             // textBox3
@@ -198,6 +202,8 @@ namespace Расчет_ОПП
             textBox3.Name = "textBox3";
             textBox3.Size = new System.Drawing.Size(50, 23);
             textBox3.TabIndex = 7;
+            textBox3.Text = "0";
+            textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox3.KeyPress += textBox3_KeyPress;
             // 
             // textBox4
@@ -206,6 +212,8 @@ namespace Расчет_ОПП
             textBox4.Name = "textBox4";
             textBox4.Size = new System.Drawing.Size(50, 23);
             textBox4.TabIndex = 8;
+            textBox4.Text = "0";
+            textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox4.KeyPress += textBox4_KeyPress;
             // 
             // textBox5
@@ -214,6 +222,8 @@ namespace Расчет_ОПП
             textBox5.Name = "textBox5";
             textBox5.Size = new System.Drawing.Size(50, 23);
             textBox5.TabIndex = 9;
+            textBox5.Text = "0";
+            textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox5.KeyPress += textBox5_KeyPress;
             // 
             // textBox6
@@ -222,6 +232,8 @@ namespace Расчет_ОПП
             textBox6.Name = "textBox6";
             textBox6.Size = new System.Drawing.Size(50, 23);
             textBox6.TabIndex = 10;
+            textBox6.Text = "0";
+            textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox6.KeyPress += textBox6_KeyPress;
             // 
             // textBox7
@@ -230,6 +242,8 @@ namespace Расчет_ОПП
             textBox7.Name = "textBox7";
             textBox7.Size = new System.Drawing.Size(50, 23);
             textBox7.TabIndex = 11;
+            textBox7.Text = "0";
+            textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox7.KeyPress += textBox7_KeyPress;
             // 
             // textBox8
@@ -238,6 +252,8 @@ namespace Расчет_ОПП
             textBox8.Name = "textBox8";
             textBox8.Size = new System.Drawing.Size(50, 23);
             textBox8.TabIndex = 12;
+            textBox8.Text = "0";
+            textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox8.KeyPress += textBox8_KeyPress;
             // 
             // textBox9
@@ -246,6 +262,8 @@ namespace Расчет_ОПП
             textBox9.Name = "textBox9";
             textBox9.Size = new System.Drawing.Size(50, 23);
             textBox9.TabIndex = 13;
+            textBox9.Text = "0";
+            textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox9.KeyPress += textBox9_KeyPress;
             // 
             // textBox10
@@ -254,6 +272,8 @@ namespace Расчет_ОПП
             textBox10.Name = "textBox10";
             textBox10.Size = new System.Drawing.Size(50, 23);
             textBox10.TabIndex = 14;
+            textBox10.Text = "0";
+            textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox10.KeyPress += textBox10_KeyPress;
             // 
             // label5
@@ -332,6 +352,8 @@ namespace Расчет_ОПП
             textBox11.Name = "textBox11";
             textBox11.Size = new System.Drawing.Size(50, 23);
             textBox11.TabIndex = 22;
+            textBox11.Text = "0";
+            textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox11.KeyPress += textBox11_KeyPress;
             // 
             // textBox12
@@ -340,6 +362,8 @@ namespace Расчет_ОПП
             textBox12.Name = "textBox12";
             textBox12.Size = new System.Drawing.Size(50, 23);
             textBox12.TabIndex = 23;
+            textBox12.Text = "0";
+            textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox12.KeyPress += textBox12_KeyPress;
             // 
             // textBox13
@@ -348,6 +372,8 @@ namespace Расчет_ОПП
             textBox13.Name = "textBox13";
             textBox13.Size = new System.Drawing.Size(50, 23);
             textBox13.TabIndex = 24;
+            textBox13.Text = "0";
+            textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox13.KeyPress += textBox13_KeyPress;
             // 
             // textBox14
@@ -356,6 +382,8 @@ namespace Расчет_ОПП
             textBox14.Name = "textBox14";
             textBox14.Size = new System.Drawing.Size(50, 23);
             textBox14.TabIndex = 25;
+            textBox14.Text = "0";
+            textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox14.KeyPress += textBox14_KeyPress;
             // 
             // textBox15
@@ -364,6 +392,8 @@ namespace Расчет_ОПП
             textBox15.Name = "textBox15";
             textBox15.Size = new System.Drawing.Size(50, 23);
             textBox15.TabIndex = 26;
+            textBox15.Text = "0";
+            textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox15.KeyPress += textBox15_KeyPress;
             // 
             // textBox16
@@ -372,6 +402,8 @@ namespace Расчет_ОПП
             textBox16.Name = "textBox16";
             textBox16.Size = new System.Drawing.Size(50, 23);
             textBox16.TabIndex = 27;
+            textBox16.Text = "0";
+            textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox16.KeyPress += textBox16_KeyPress;
             // 
             // label12
@@ -440,6 +472,8 @@ namespace Расчет_ОПП
             textBox17.Name = "textBox17";
             textBox17.Size = new System.Drawing.Size(50, 23);
             textBox17.TabIndex = 34;
+            textBox17.Text = "0";
+            textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox17.KeyPress += textBox17_KeyPress;
             // 
             // textBox18
@@ -448,6 +482,8 @@ namespace Расчет_ОПП
             textBox18.Name = "textBox18";
             textBox18.Size = new System.Drawing.Size(50, 23);
             textBox18.TabIndex = 35;
+            textBox18.Text = "0";
+            textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox18.KeyPress += textBox18_KeyPress;
             // 
             // label18
@@ -496,6 +532,8 @@ namespace Расчет_ОПП
             textBox19.Name = "textBox19";
             textBox19.Size = new System.Drawing.Size(50, 23);
             textBox19.TabIndex = 72;
+            textBox19.Text = "0";
+            textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox19.KeyPress += textBox19_KeyPress;
             // 
             // textBox20
@@ -504,6 +542,8 @@ namespace Расчет_ОПП
             textBox20.Name = "textBox20";
             textBox20.Size = new System.Drawing.Size(50, 23);
             textBox20.TabIndex = 71;
+            textBox20.Text = "0";
+            textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox20.KeyPress += textBox20_KeyPress;
             // 
             // label22
@@ -572,6 +612,8 @@ namespace Расчет_ОПП
             textBox21.Name = "textBox21";
             textBox21.Size = new System.Drawing.Size(50, 23);
             textBox21.TabIndex = 64;
+            textBox21.Text = "0";
+            textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox21.KeyPress += textBox21_KeyPress;
             // 
             // textBox22
@@ -580,6 +622,8 @@ namespace Расчет_ОПП
             textBox22.Name = "textBox22";
             textBox22.Size = new System.Drawing.Size(50, 23);
             textBox22.TabIndex = 63;
+            textBox22.Text = "0";
+            textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox22.KeyPress += textBox22_KeyPress;
             // 
             // textBox23
@@ -588,6 +632,8 @@ namespace Расчет_ОПП
             textBox23.Name = "textBox23";
             textBox23.Size = new System.Drawing.Size(50, 23);
             textBox23.TabIndex = 62;
+            textBox23.Text = "0";
+            textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox23.KeyPress += textBox23_KeyPress;
             // 
             // textBox24
@@ -596,6 +642,8 @@ namespace Расчет_ОПП
             textBox24.Name = "textBox24";
             textBox24.Size = new System.Drawing.Size(50, 23);
             textBox24.TabIndex = 61;
+            textBox24.Text = "0";
+            textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox24.KeyPress += textBox24_KeyPress;
             // 
             // textBox25
@@ -604,6 +652,8 @@ namespace Расчет_ОПП
             textBox25.Name = "textBox25";
             textBox25.Size = new System.Drawing.Size(50, 23);
             textBox25.TabIndex = 60;
+            textBox25.Text = "0";
+            textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox25.KeyPress += textBox25_KeyPress;
             // 
             // textBox26
@@ -612,6 +662,8 @@ namespace Расчет_ОПП
             textBox26.Name = "textBox26";
             textBox26.Size = new System.Drawing.Size(50, 23);
             textBox26.TabIndex = 59;
+            textBox26.Text = "0";
+            textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox26.KeyPress += textBox26_KeyPress;
             // 
             // label28
@@ -680,6 +732,8 @@ namespace Расчет_ОПП
             textBox27.Name = "textBox27";
             textBox27.Size = new System.Drawing.Size(50, 23);
             textBox27.TabIndex = 51;
+            textBox27.Text = "0";
+            textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox27.KeyPress += textBox27_KeyPress;
             // 
             // textBox28
@@ -688,6 +742,8 @@ namespace Расчет_ОПП
             textBox28.Name = "textBox28";
             textBox28.Size = new System.Drawing.Size(50, 23);
             textBox28.TabIndex = 50;
+            textBox28.Text = "0";
+            textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox28.KeyPress += textBox28_KeyPress;
             // 
             // textBox29
@@ -696,6 +752,8 @@ namespace Расчет_ОПП
             textBox29.Name = "textBox29";
             textBox29.Size = new System.Drawing.Size(50, 23);
             textBox29.TabIndex = 49;
+            textBox29.Text = "0";
+            textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox29.KeyPress += textBox29_KeyPress;
             // 
             // textBox30
@@ -704,6 +762,8 @@ namespace Расчет_ОПП
             textBox30.Name = "textBox30";
             textBox30.Size = new System.Drawing.Size(50, 23);
             textBox30.TabIndex = 48;
+            textBox30.Text = "0";
+            textBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox30.KeyPress += textBox30_KeyPress;
             // 
             // textBox32
@@ -712,6 +772,8 @@ namespace Расчет_ОПП
             textBox32.Name = "textBox32";
             textBox32.Size = new System.Drawing.Size(50, 23);
             textBox32.TabIndex = 46;
+            textBox32.Text = "0";
+            textBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox32.KeyPress += textBox32_KeyPress;
             // 
             // textBox33
@@ -720,6 +782,8 @@ namespace Расчет_ОПП
             textBox33.Name = "textBox33";
             textBox33.Size = new System.Drawing.Size(50, 23);
             textBox33.TabIndex = 45;
+            textBox33.Text = "0";
+            textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox33.KeyPress += textBox33_KeyPress;
             // 
             // textBox34
@@ -728,6 +792,8 @@ namespace Расчет_ОПП
             textBox34.Name = "textBox34";
             textBox34.Size = new System.Drawing.Size(50, 23);
             textBox34.TabIndex = 44;
+            textBox34.Text = "0";
+            textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox34.KeyPress += textBox34_KeyPress;
             // 
             // textBox35
@@ -736,6 +802,8 @@ namespace Расчет_ОПП
             textBox35.Name = "textBox35";
             textBox35.Size = new System.Drawing.Size(50, 23);
             textBox35.TabIndex = 43;
+            textBox35.Text = "0";
+            textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox35.KeyPress += textBox35_KeyPress;
             // 
             // label35
@@ -773,6 +841,8 @@ namespace Расчет_ОПП
             textBox36.Name = "textBox36";
             textBox36.Size = new System.Drawing.Size(50, 23);
             textBox36.TabIndex = 39;
+            textBox36.Text = "0";
+            textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox36.KeyPress += textBox36_KeyPress;
             // 
             // label38
@@ -864,6 +934,8 @@ namespace Расчет_ОПП
             textBox31.Name = "textBox31";
             textBox31.Size = new System.Drawing.Size(80, 23);
             textBox31.TabIndex = 77;
+            textBox31.Text = "0";
+            textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox31.KeyPress += textBox31_KeyPress;
             // 
             // textBox37
@@ -872,6 +944,8 @@ namespace Расчет_ОПП
             textBox37.Name = "textBox37";
             textBox37.Size = new System.Drawing.Size(80, 23);
             textBox37.TabIndex = 79;
+            textBox37.Text = "0";
+            textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox37.KeyPress += textBox37_KeyPress;
             // 
             // textBox38
@@ -880,6 +954,8 @@ namespace Расчет_ОПП
             textBox38.Name = "textBox38";
             textBox38.Size = new System.Drawing.Size(80, 23);
             textBox38.TabIndex = 81;
+            textBox38.Text = "0";
+            textBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox38.KeyPress += textBox38_KeyPress;
             // 
             // textBox39
@@ -888,6 +964,8 @@ namespace Расчет_ОПП
             textBox39.Name = "textBox39";
             textBox39.Size = new System.Drawing.Size(80, 23);
             textBox39.TabIndex = 83;
+            textBox39.Text = "0";
+            textBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox39.KeyPress += textBox39_KeyPress;
             // 
             // textBox40
@@ -896,6 +974,8 @@ namespace Расчет_ОПП
             textBox40.Name = "textBox40";
             textBox40.Size = new System.Drawing.Size(80, 23);
             textBox40.TabIndex = 85;
+            textBox40.Text = "0";
+            textBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox40.KeyPress += textBox40_KeyPress;
             // 
             // textBox41
@@ -904,6 +984,8 @@ namespace Расчет_ОПП
             textBox41.Name = "textBox41";
             textBox41.Size = new System.Drawing.Size(49, 23);
             textBox41.TabIndex = 87;
+            textBox41.Text = "0";
+            textBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox41.KeyPress += textBox41_KeyPress;
             // 
             // label45
@@ -921,6 +1003,8 @@ namespace Расчет_ОПП
             textBox42.Name = "textBox42";
             textBox42.Size = new System.Drawing.Size(50, 23);
             textBox42.TabIndex = 89;
+            textBox42.Text = "0";
+            textBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             textBox42.KeyPress += textBox42_KeyPress;
             // 
             // panel1

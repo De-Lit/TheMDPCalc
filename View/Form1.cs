@@ -18,64 +18,71 @@ namespace Расчет_ОПП
         private Controller controller_;
         private void button1_Click(object sender, EventArgs e)
         {
-            // Инициализация словаря основных параметров
-            Dictionary<string, double> inputMainParamsDict = new Dictionary<string, double>()
+            try
             {
-                { "L", double.Parse(textBox31.Text)},
-                { "G0", double.Parse(textBox37.Text)},
-                { "SpGr", double.Parse(textBox38.Text)},
-                //{ "nu1", double.Parse(textBox39.Text)},
-                //{ "nu2", double.Parse(textBox40.Text)},
-                { "dm1", double.Parse(textBox41.Text)},
-                { "dm2", double.Parse(textBox42.Text)}
-            };
-            // Инициализация словаря параметров первой ступени
-            Dictionary<string, double> firstStageParamsDict = new Dictionary<string, double>()
+                // Инициализация словаря основных параметров
+                Dictionary<string, double> inputMainParamsDict = new Dictionary<string, double>()
+                {
+                    { "L", double.Parse(textBox31.Text)},
+                    { "G0", double.Parse(textBox37.Text)},
+                    { "SpGr", double.Parse(textBox38.Text)},
+                    //{ "nu1", double.Parse(textBox39.Text)},
+                    //{ "nu2", double.Parse(textBox40.Text)},
+                    { "dm1", double.Parse(textBox41.Text)},
+                    { "dm2", double.Parse(textBox42.Text)}
+                };
+                // Инициализация словаря параметров первой ступени
+                Dictionary<string, double> firstStageParamsDict = new Dictionary<string, double>()
+                {
+                    {"Jg", double.Parse(textBox1.Text) },
+                    {"Jo", double.Parse(textBox2.Text) },
+                    {"K0", double.Parse(textBox3.Text) },
+                    {"aa", double.Parse(textBox4.Text) },
+                    {"muHo", double.Parse(textBox5.Text) },
+                    {"muPer", double.Parse(textBox6.Text) },
+                    {"muOu", double.Parse(textBox7.Text) },
+                    {"muSu", double.Parse(textBox8.Text) },
+                    {"muSt", double.Parse(textBox9.Text) },
+                    {"aSpz", double.Parse(textBox10.Text) },
+                    {"aTost", double.Parse(textBox11.Text) },
+                    {"kPr", double.Parse(textBox12.Text) },
+                    {"PmaxO", double.Parse(textBox13.Text) },
+                    {"PmaxG", double.Parse(textBox14.Text) },
+                    {"F", double.Parse(textBox15.Text) },
+                    {"Cp", double.Parse(textBox16.Text) },
+                    {"C0", double.Parse(textBox17.Text) },
+                    {"GammaDU", double.Parse(textBox18.Text) },
+                    { "nu1", double.Parse(textBox39.Text)}
+                };
+                // Инициализация словаря параметров второй ступени
+                Dictionary<string, double> secondStageParamsDict = new Dictionary<string, double>()
+                {
+                    {"Jg", double.Parse(textBox36.Text) },
+                    {"Jo", double.Parse(textBox35.Text) },
+                    {"K0", double.Parse(textBox34.Text) },
+                    {"aa", double.Parse(textBox33.Text) },
+                    {"muHo", double.Parse(textBox32.Text) },
+                    {"muOu", double.Parse(textBox30.Text) },
+                    {"muSu", double.Parse(textBox29.Text) },
+                    {"muPo", double.Parse(textBox28.Text) },
+                    {"aSpz", double.Parse(textBox27.Text) },
+                    {"aTost", double.Parse(textBox26.Text) },
+                    {"kPr", double.Parse(textBox25.Text) },
+                    {"PmaxO", double.Parse(textBox24.Text) },
+                    {"PmaxG", double.Parse(textBox23.Text) },
+                    {"F", double.Parse(textBox22.Text) },
+                    {"Cp", double.Parse(textBox21.Text) },
+                    {"C0", double.Parse(textBox20.Text) },
+                    {"GammaDU", double.Parse(textBox19.Text) },
+                    {"G0", double.Parse(textBox37.Text) },
+                    { "nu2", double.Parse(textBox39.Text)}
+                };
+                label29.Text = controller_.Calculate(inputMainParamsDict, firstStageParamsDict, secondStageParamsDict);
+            }
+            catch
             {
-                {"Jg", double.Parse(textBox1.Text) },
-                {"Jo", double.Parse(textBox2.Text) },
-                {"K0", double.Parse(textBox3.Text) },
-                {"aa", double.Parse(textBox4.Text) },
-                {"muHo", double.Parse(textBox5.Text) },
-                {"muPer", double.Parse(textBox6.Text) },
-                {"muOu", double.Parse(textBox7.Text) },
-                {"muSu", double.Parse(textBox8.Text) },
-                {"muSt", double.Parse(textBox9.Text) },
-                {"aSpz", double.Parse(textBox10.Text) },
-                {"aTost", double.Parse(textBox11.Text) },
-                {"kPr", double.Parse(textBox12.Text) },
-                {"PmaxO", double.Parse(textBox13.Text) },
-                {"PmaxG", double.Parse(textBox14.Text) },
-                {"F", double.Parse(textBox15.Text) },
-                {"Cp", double.Parse(textBox16.Text) },
-                {"C0", double.Parse(textBox17.Text) },
-                {"GammaDU", double.Parse(textBox18.Text) },
-                { "nu1", double.Parse(textBox39.Text)}
-            };
-            // Инициализация словаря параметров второй ступени
-            Dictionary<string, double> secondStageParamsDict = new Dictionary<string, double>()
-            {
-                {"Jg", double.Parse(textBox36.Text) },
-                {"Jo", double.Parse(textBox35.Text) },
-                {"K0", double.Parse(textBox34.Text) },
-                {"aa", double.Parse(textBox33.Text) },
-                {"muHo", double.Parse(textBox32.Text) },
-                {"muOu", double.Parse(textBox30.Text) },
-                {"muSu", double.Parse(textBox29.Text) },
-                {"muPo", double.Parse(textBox28.Text) },
-                {"aSpz", double.Parse(textBox27.Text) },
-                {"aTost", double.Parse(textBox26.Text) },
-                {"kPr", double.Parse(textBox25.Text) },
-                {"PmaxO", double.Parse(textBox24.Text) },
-                {"PmaxG", double.Parse(textBox23.Text) },
-                {"F", double.Parse(textBox22.Text) },
-                {"Cp", double.Parse(textBox21.Text) },
-                {"C0", double.Parse(textBox20.Text) },
-                {"GammaDU", double.Parse(textBox19.Text) },
-                {"G0", double.Parse(textBox37.Text) },
-                { "nu2", double.Parse(textBox39.Text)}
-            };
-            label29.Text = controller_.Calculate(inputMainParamsDict, firstStageParamsDict, secondStageParamsDict);
+                label29.Text = "Error";
+            }
         }
         // Ограничение ввода в textBox формы
         private void CheckInput(KeyPressEventArgs e)
